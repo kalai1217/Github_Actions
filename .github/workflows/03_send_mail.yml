@@ -1,4 +1,4 @@
-name: Send Mail
+name: Send Mail New
 on: push
 
 jobs:
