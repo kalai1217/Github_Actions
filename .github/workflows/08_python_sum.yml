@@ -1,0 +1,18 @@
+name: run Hello World from py script
+on: push
+
+jobs:
+  Hello:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clone repo
+      uses: actions/checkout@v3
+
+    - name: Setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run a py script
+      run: python 08_sum_of_two_numbers.py
