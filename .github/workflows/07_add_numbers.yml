@@ -9,23 +9,16 @@ jobs:
   calculate-sum:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repo (optional, useful if you have files in the repo)
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      # Define two numbers as environment variables
       - name: Set numbers
         run: |
           echo "NUMBER1=5" >> $GITHUB_ENV
           echo "NUMBER2=10" >> $GITHUB_ENV
 
-      # Perform the sum
       - name: Add two numbers
         run: |
-          SUM=$(($NUMBER1 + $NUMBER2))
+          SUM=$(( $NUMBER1 + $NUMBER2 ))
           echo "The sum of $NUMBER1 and $NUMBER2 is: $SUM"
           echo "SUM=$SUM" >> $GITHUB_ENV
 
-      # Output the result
       - name: Display sum
         run: echo "The result of the addition is: ${{ env.SUM }}"
